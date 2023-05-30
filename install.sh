@@ -72,7 +72,7 @@ exit
 echo
 EOF
 proot-distro login ubuntu
-echo "proot-distro login --user ubuntu ubuntu --shared-tmp --bind /sdcard:/sdcard --isolated --bind /dev/null:/proc/sys/fs/inotify/max_user_watches --bind /dev/null:/proc/sys/kernel/cap_last_cap" >> $PREFIX/bin/ubuntu
+echo "proot-distro login --user ubuntu ubuntu --shared-tmp --bind /sdcard:/sdcard --isolated --bind /dev/null:/dev/dri/card0 --bind /proc/sys/fs/inotify:/proc/sys/fs/inotify --bind /dev/null:/proc/sys/fs/inotify/max_queued_events --bind /dev/null:/proc/sys/fs/inotify/max_user_instances --bind /dev/null:/proc/sys/fs/inotify/max_user_watches" >> $PREFIX/bin/ubuntu
 chmod +x $PREFIX/bin/ubuntu
 rm $CHROOT/root/.bashrc
 }
