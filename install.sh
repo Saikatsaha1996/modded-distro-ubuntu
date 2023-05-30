@@ -72,7 +72,7 @@ exit
 echo
 EOF
 proot-distro login ubuntu
-echo "proot-distro login --user ubuntu ubuntu" >> $PREFIX/bin/ubuntu
+echo "proot-distro login --user ubuntu ubuntu --shared-tmp --bind /sdcard:/sdcard --isolated --bind /dev/null:/proc/sys/fs/inotify/max_user_watches --bind /dev/null:/proc/sys/kernel/cap_last_cap" >> $PREFIX/bin/ubuntu
 chmod +x $PREFIX/bin/ubuntu
 rm $CHROOT/root/.bashrc
 }
